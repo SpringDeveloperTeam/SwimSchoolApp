@@ -1,35 +1,37 @@
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Carlos', 'Gómez', 'carlos.gomez@email.com', 'Calle 456', '111222333');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Luisa', 'Martínez', 'luisa.martinez@email.com', 'Avenida Y', '444555666');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Ana', 'Rodríguez', 'ana.rodriguez@email.com', 'Carrera 789', '777888999');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Diego', 'Pérez', 'diego.perez@email.com', 'Calle Z', '000111222');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Marcela', 'López', 'marcela.lopez@email.com', 'Avenida 456', '333444555');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Andrés', 'García', 'andres.garcia@email.com', 'Carrera 789', '666777888');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Sofía', 'Hernández', 'sofia.hernandez@email.com', 'Calle XYZ', '999000111');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Martín', 'González', 'martin.gonzalez@email.com', 'Avenida ABC', '222333444');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Laura', 'Suárez', 'laura.suarez@email.com', 'Calle 123', '555666777');
-INSERT INTO ACUDIENTE (nombre, apellido, email, direccion, telefono) VALUES ('Pedro', 'Ramírez', 'pedro.ramirez@email.com', 'Avenida DEF', '888999000');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Carlos', 'Gómez', '123456', 'carlos.gomez@email.com', 'Calle 456', '111222333');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Luisa', 'Martínez', '123456', 'luisa.martinez@email.com', 'Avenida Y', '444555666');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Ana', 'Rodríguez', '123456', 'ana.rodriguez@email.com', 'Carrera 789', '777888999');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Diego', 'Pérez', '123456', 'diego.perez@email.com', 'Calle Z', '000111222');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Marcela', 'López', '123456', 'marcela.lopez@email.com', 'Avenida 456', '333444555');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Andrés', 'García', '123456', 'andres.garcia@email.com', 'Carrera 789', '666777888');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Sofía', 'Hernández', '123456', 'sofia.hernandez@email.com', 'Calle XYZ', '999000111');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Martín', 'González', '123456', 'martin.gonzalez@email.com', 'Avenida ABC', '222333444');
+INSERT INTO ACUDIENTES (nombre, apellido, documento,  email, direccion, telefono) VALUES ('Laura', 'Suárez', '123456', 'laura.suarez@email.com', 'Calle 123', '555666777');
+INSERT INTO ACUDIENTES (nombre, apellido, documento, email, direccion, telefono) VALUES ('Pedro', 'Ramírez', '123456', 'pedro.ramirez@email.com', 'Avenida DEF', '888999000');
 
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Ana', 'Gómez', 'Biología', 1);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Luis', 'Martínez', 'Física', 2);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('María', 'Pérez', 'Química', 1);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Carlos', 'López', 'Historia', 2);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Laura', 'García', 'Matemáticas', 1);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Andrés', 'Hernández', 'Literatura', 2);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Sofía', 'González', 'Inglés', 1);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Martín', 'Suárez', 'Música', 2);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Diego', 'Ramírez', 'Arte', 1);
-INSERT INTO PROFESOR (nombre, apellido, profesion, id_calendario) VALUES ('Pedro', 'Gómez', 'Educación Física', 2);
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Ana', 'Gómez', 'Biología');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Luis', 'Martínez', 'Física');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('María', 'Pérez', 'Química');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Carlos', 'López', 'Historia');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Laura', 'García', 'Matemáticas');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Andrés', 'Hernández', 'Literatura');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Sofía', 'González', 'Inglés');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Martín', 'Suárez', 'Música');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Diego', 'Ramírez', 'Arte');
+INSERT INTO PROFESORES (nombre, apellido, profesion) VALUES ('Pedro', 'Gómez', 'Educación Física');
 
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Lunes', '08:00 - 12:00');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Martes', '14:00 - 18:00');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Miércoles', '10:00 - 14:00');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Jueves', '16:00 - 20:00');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Viernes', '09:00 - 13:00');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Sábado', '11:00 - 15:00');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Domingo', 'Descanso');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Lunes', '14:00 - 18:00');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Martes', '08:00 - 12:00');
-INSERT INTO CALENDARIO (dia, horario) VALUES ('Miércoles', '16:00 - 20:00');
+
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Lunes', '08:00 - 12:00', 1);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Martes', '14:00 - 18:00', 2);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Miércoles', '10:00 - 14:00', 3);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Jueves', '16:00 - 20:00', 4);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Viernes', '09:00 - 13:00ES', 5);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Sábado', '11:00 - 15:00', 3);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Domingo', 'Descanso', 4);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Lunes', '14:00 - 18:00', 1);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Martes', '08:00 - 12:00', 6);
+INSERT INTO CALENDARIOS (dia, horario, id_profesor) VALUES ('Miércoles', '16:00 - 20:00', 2);
+
 
 INSERT INTO ALUMNOS (nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Jorge', 'Pérez', 16, 1, 1);
 INSERT INTO ALUMNOS (nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Carolina', 'González', 15, 2, 2);
