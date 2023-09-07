@@ -3,25 +3,16 @@ package com.school.app.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "ALUMNOS")
-public class Student {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "nombre", nullable = false)
-    private String name;
-
-    @Column(name = "apellido", nullable = false)
-    private String lastName;
-
+public class Student extends Person {
     @Column(name = "edad", nullable = false)
     private byte age;
 
