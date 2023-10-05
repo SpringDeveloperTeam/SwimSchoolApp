@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -12,9 +11,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "HISTORIAL_PAGOS")
-public class HistoryRecord {
-
+@Table(name = "FACTURAS")
+public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,6 +26,6 @@ public class HistoryRecord {
     @Column(name = "fecha_pago", nullable = false)
     private LocalDate dateOfPaid;
 
-    @Column(name = "id_estudiante", nullable = false)
-    private Long idStudent;
+    @Column(name = "id_acudiente", nullable = false)
+    private Parent parent;
 }
