@@ -26,6 +26,7 @@ public class Invoice {
     @Column(name = "fecha_pago", nullable = false)
     private LocalDate dateOfPaid;
 
-    @Column(name = "id_acudiente", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_acudiente")
     private Parent parent;
 }
