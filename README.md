@@ -19,11 +19,11 @@
 
 
 # EMOJIS PARA EL ENVIO DE PULL REQUEST
-- :sparkles: Se usa cuando vamos a introducir nuevas funcionalidades
-- :recycle:  Se usa cuando vamos a modificar o refactorizar codigo existente
-- :heavy_plus_sign: Se usa cuando vamos a agregar dependencias al proyecto
-- :wrench: Se usa cuando vamos a agregar o modificar archivos de configuracion
-- :bug: Se usa cuando vamos a corregir un bug dentro de la aplicacion
-- :white_check_mark:  Se usa cuando vamos a agregar, actualizar o probar tests
-- :arrow_down:  Se usa para hacer un downgrade de dependencias
-- :arrow_up:  Se usa para hacer un upgrade de dependencias
+- :sparkles: [sparkles] Se usa cuando vamos a introducir nuevas funcionalidades
+- :recycle: [recycle] Se usa cuando vamos a modificar o refactorizar codigo existente
+- :heavy_plus_sign: [heavy_plus_sign] Se usa cuando vamos a agregar dependencias al proyecto
+- :wrench: [wrench] Se usa cuando vamos a agregar o modificar archivos de configuracion
+- :bug: [bug] Se usa cuando vamos a corregir un bug dentro de la aplicacion
+- :white_check_mark: [white_check_mark] Se usa cuando vamos a agregar, actualizar o probar tests
+- :arrow_down: [arrow_down] Se usa para hacer un downgrade de dependencias
+- :arrow_up: [arrow_up] Se usa para hacer un upgrade de dependencias
