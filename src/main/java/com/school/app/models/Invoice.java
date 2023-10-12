@@ -8,10 +8,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "FACTURAS")
+@Table(name = "facturas")
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,7 @@ public class Invoice {
     @Column(name = "fecha_pago", nullable = false)
     private LocalDate dateOfPaid;
 
-    @Column(name = "id_acudiente", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_acudiente")
     private Parent parent;
 }

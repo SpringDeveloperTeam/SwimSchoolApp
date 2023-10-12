@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
+@Entity
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "PROFESORES")
+@Table(name = "profesores")
 public class Teacher extends Person {
     @Column(name = "profesion", nullable = false)
     private String profession;

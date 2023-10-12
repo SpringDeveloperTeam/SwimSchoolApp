@@ -7,11 +7,11 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@Entity
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "ALUMNOS")
+@Table(name = "alumnos")
 public class Student extends Person {
     @Column(name = "edad", nullable = false)
     private byte age;
