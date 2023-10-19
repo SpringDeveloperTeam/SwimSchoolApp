@@ -1,10 +1,12 @@
 package com.school.app.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 @Data
@@ -26,6 +28,7 @@ public class Parent extends Person {
     @Column(name = "telefono", nullable = false)
     private Long phone;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<Student> students;
 

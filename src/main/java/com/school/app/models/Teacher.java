@@ -1,5 +1,6 @@
 package com.school.app.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,15 +9,17 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
-@EqualsAndHashCode(callSuper=false)
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "PROFESORES")
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=false)
 public class Teacher extends Person {
+
     @Column(name = "profesion", nullable = false)
     private String profession;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
     private List<Student> students;
 

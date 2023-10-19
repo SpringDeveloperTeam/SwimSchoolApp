@@ -1,11 +1,10 @@
 package com.school.app.repository;
 
-import java.util.List;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import com.school.app.models.Student;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface IStudentRepository extends CrudRepository<Student, Long> {
-    @Query("SELECT s FROM Student s")
-    List<Student> getStudents();
+
 }
