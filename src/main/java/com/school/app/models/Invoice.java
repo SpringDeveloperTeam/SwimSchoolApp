@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -24,7 +24,7 @@ public class Invoice {
     private String paidMode;
 
     @Column(name = "fecha_pago", nullable = false)
-    private LocalDate dateOfPaid;
+    private LocalDateTime dateOfPaid;
 
     @ManyToOne
     @JoinColumn(name = "id_acudiente")
