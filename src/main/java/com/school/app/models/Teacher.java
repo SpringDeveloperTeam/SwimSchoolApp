@@ -10,10 +10,10 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "PROFESORES")
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "profesores")
 public class Teacher extends Person {
 
     @Column(name = "profesion", nullable = false)

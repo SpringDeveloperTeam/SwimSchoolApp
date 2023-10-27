@@ -8,10 +8,10 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "FACTURAS")
+@Table(name = "facturas")
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

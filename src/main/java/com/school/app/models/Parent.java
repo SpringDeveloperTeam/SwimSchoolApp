@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
+@Entity
 @EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "ACUDIENTES")
+@Table(name = "acudientes")
 public class Parent extends Person {
     @Column(name = "documento", nullable = false)
     private String document;
@@ -31,6 +31,6 @@ public class Parent extends Person {
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<Student> students;
 
-    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<Invoice> invoices;
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, targetEntity = Invoice.class)
+    private List<Invoice> invoiceList;
 }

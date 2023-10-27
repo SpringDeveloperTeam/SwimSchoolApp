@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SchoolReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a57f4406-9a7b-412e-8a83-77b7d0b4a63a">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <parameter name="IdInvoice" class="java.lang.String"/>
+    <parameter name="CreationDate" class="java.lang.String"/>
+    <parameter name="AmountPaid" class="java.math.BigDecimal"/>
+    <parameter name="PaidMethod" class="java.lang.String"/>
+    <parameter name="StudentName" class="java.lang.String"/>
+    <parameter name="ParentName" class="java.lang.String"/>
+    <parameter name="ImageDir" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="88" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="30" width="560" height="58" uuid="942ef001-5c42-43e5-a040-fbcae4d4dd17"/>
+                <textElement textAlignment="Center">
+                    <font size="37"/>
+                </textElement>
+                <text><![CDATA[¡Comprobante electrónico!]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="173" splitType="Stretch">
+            <image>
+                <reportElement x="250" y="0" width="80" height="56" uuid="cb5f0550-3d07-41e7-9f76-34d1239488b8"/>
+                <imageExpression><![CDATA[new java.net.URL($P{ImageDir} + "Check.png")]]></imageExpression>
+            </image>
+            <rectangle>
+                <reportElement x="20" y="80" width="520" height="70" uuid="05829145-9f66-440e-9a7a-be663fbafd2f"/>
+                <graphicElement>
+                    <pen lineColor="rgba(227, 216, 216, 0.39215687)"/>
+                </graphicElement>
+            </rectangle>
+            <image>
+                <reportElement x="40" y="75" width="100" height="80" uuid="a75e2d0a-bf99-47f9-9e6f-08f310e037d4"/>
+                <imageExpression><![CDATA[new java.net.URL($P{ImageDir} + "Bombilla.png")]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="140" y="80" width="359" height="70" uuid="373db667-9e57-421e-92c6-db70568f0b07"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[Para cualquier reclamo referente a la contratación del servicio debe presentar el debido comprobante de pago.]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="107" splitType="Stretch">
+            <rectangle>
+                <reportElement x="20" y="20" width="520" height="68" uuid="845923b6-d651-46f8-b949-1ab69e782dc8"/>
+                <graphicElement>
+                    <pen lineColor="rgba(227, 216, 216, 0.39215687)"/>
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="130" y="27" width="179" height="23" uuid="775bc71d-f4d9-4e09-ac28-a2ab5277a862"/>
+                <textElement>
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Comprobante No. ]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="280" y="27" width="229" height="23" uuid="b714961e-c80d-4f2b-93f8-2f597b584ff8"/>
+                <textElement>
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{IdInvoice}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="20" y="50" width="489" height="30" uuid="c313f524-7387-4eb1-8ac5-5582f59f0073"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{CreationDate}]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="208" splitType="Stretch">
+            <rectangle>
+                <reportElement x="20" y="10" width="520" height="190" uuid="5ab3165b-c9db-4f30-b8bc-b9a5b08dea93"/>
+                <graphicElement>
+                    <pen lineStyle="Dashed" lineColor="#E3D8D8"/>
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="40" y="30" width="190" height="30" backcolor="#FFFFFF" uuid="83ae2985-4e8c-4983-a886-5d8c5281e48e"/>
+                <textElement>
+                    <font size="18"/>
+                </textElement>
+                <text><![CDATA[Valor pagado:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="40" y="70" width="190" height="30" backcolor="#FFFFFF" uuid="4c3e6eef-37d1-4753-9fc2-b34622c2ceb3"/>
+                <textElement>
+                    <font size="18"/>
+                </textElement>
+                <text><![CDATA[Medio de pago: ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="40" y="110" width="190" height="30" backcolor="#FFFFFF" uuid="8e289f39-ac09-4597-ab81-5f7053e9559a"/>
+                <textElement>
+                    <font size="18"/>
+                </textElement>
+                <text><![CDATA[Nombre del acudiente: ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="40" y="150" width="190" height="30" backcolor="#FFFFFF" uuid="d732fe40-a242-4b7b-b5b6-d44c403c6659"/>
+                <textElement>
+                    <font size="18"/>
+                </textElement>
+                <text><![CDATA[Nombre del alumno:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="240" y="30" width="290" height="30" uuid="435023fb-eb49-4fc4-9842-8735a0d9b0c5"/>
+                <textElement>
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA["$" + $P{AmountPaid}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="70" width="290" height="30" uuid="84654504-03fb-43ec-9d73-590d21512132"/>
+                <textElement>
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PaidMethod}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="110" width="290" height="30" uuid="5912721e-14af-49ee-b1c3-57c79bde51c3"/>
+                <textElement>
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{ParentName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="150" width="290" height="30" uuid="8721ee43-bd2a-4c5e-83c0-02ff9fe049bd"/>
+                <textElement>
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{StudentName}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="112" splitType="Stretch">
+            <staticText>
+                <reportElement x="280" y="50" width="264" height="48" uuid="da8b9921-49f3-4a14-b6a2-4da4678afb59"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[________________________
+Santiago Perez Posada]]></text>
+            </staticText>
+            <image>
+                <reportElement x="300" y="-10" width="230" height="120" uuid="e5bf75a7-059f-4866-a813-83f8eff912af"/>
+                <imageExpression><![CDATA[new java.net.URL($P{ImageDir} + "Firma.png")]]></imageExpression>
+            </image>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="58" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

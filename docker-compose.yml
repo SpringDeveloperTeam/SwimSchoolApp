@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  mysql8:
+    image: mysql:8
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 150919
+      MYSQL_DATABASE: swin_school
+    volumes:
+      - data-mysql:/var/lib/mysql
+    networks:
+      - swin_network
+volumes:
+  data-mysql:
+networks:
+  swin_network:
