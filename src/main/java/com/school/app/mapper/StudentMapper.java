@@ -10,6 +10,5 @@ import org.mapstruct.MappingConstants;
 public interface StudentMapper {
     @Mapping(source = "name", target = "studentName")
     @Mapping(source = "parent.name", target = "parentName")
-    @Mapping(source = "parent.invoices", target = "invoices")
     StudentDTO toStudentDTO(Student student);
 }
