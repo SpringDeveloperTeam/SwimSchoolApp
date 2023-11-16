@@ -7,10 +7,10 @@ import lombok.*;
 @Data
 @Entity
 @Builder
-@EqualsAndHashCode(callSuper=false)
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "alumnos")
+@EqualsAndHashCode(callSuper=false)
 public class Student extends Person {
 
     @Column(name = "edad", nullable = false)
