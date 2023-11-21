@@ -31,6 +31,6 @@ public class Parent extends Person {
     @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<Student> students;
 
-    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, targetEntity = Invoice.class)
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, targetEntity = Invoice.class)
     private List<Invoice> invoiceList;
 }

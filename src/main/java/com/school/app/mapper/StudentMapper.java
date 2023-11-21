@@ -2,33 +2,30 @@ package com.school.app.mapper;
 
 import com.school.app.dtos.StudentDTO;
 import com.school.app.models.Invoice;
-import com.school.app.models.Parent;
 import com.school.app.models.Student;
-import org.mapstruct.*;
-import org.mapstruct.factory.Mappers;
-
 import java.time.LocalDateTime;
-import java.util.Comparator;
+import java.util.List;
+import org.mapstruct.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface StudentMapper {
-
-    StudentMapper INSTANCE = Mappers.getMapper(StudentMapper.class);
+    public static final Logger LOG = LoggerFactory.getLogger(StudentMapper.class);
 
     @Mapping(source = "name", target = "studentName")
     @Mapping(source = "parent.name", target = "parentName")
-    @Mapping(source = "parent", target = "lastPayment", qualifiedByName = "lastPaymentDate")
+    @Mapping(source = "parent.invoiceList", target = "lastPayment", qualifiedByName = "lastPayment")
     StudentDTO toStudentDTO(Student student);
 
-    @Named(value= "lastPaymentDate")
-    default LocalDateTime getLastPaymentDate(Parent parent) {
-        if (parent != null && parent.getInvoiceList() != null) {
-            return parent.getInvoiceList().stream()
-                    .filter(invoice -> invoice.getDateOfPaid() != null)
-                    .max(Comparator.comparing(Invoice::getDateOfPaid))
-                    .map(Invoice::getDateOfPaid)
-                    .orElse(null);
-        }
-        return null;
+    @Named("lastPayment")
+    default LocalDateTime mapLastPayment(List<Invoice> invoiceList) {
+        if (invoiceList == null || invoiceList.isEmpty()) return null;
+
+        invoiceList.sort((inv1, inv2) -> inv2.getDateOfPaid().compareTo(inv1.getDateOfPaid()));
+        
+        return invoiceList.get(0).getDateOfPaid();
     }
+
+    Iterable<StudentDTO> toStudentsDTO(Iterable<Student> students);
 }

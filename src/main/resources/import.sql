@@ -36,14 +36,14 @@ INSERT INTO calendarios(dia, horario, id_profesor) VALUES ('Miércoles', '16:00 
 
 INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Jorge', 'Pérez', 16, 1, 1);
 INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Carolina', 'González', 15, 2, 2);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Mateo', 'López', 14, 1, 3);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Isabela', 'Ramírez', 17, 2, 4);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Andrea', 'Suárez', 15, 1, 5);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Felipe', 'Hernández', 16, 2, 6);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Manuel', 'Martínez', 14, 1, 7);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Camila', 'Gómez', 17, 2, 8);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Valentina', 'Pérez', 15, 1, 9);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Daniel', 'González', 14, 2, 10);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Mateo', 'López', 14, 3, 3);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Isabela', 'Ramírez', 17, 4, 4);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Andrea', 'Suárez', 15, 5, 5);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Felipe', 'Hernández', 16, 6, 6);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Manuel', 'Martínez', 14, 7, 7);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Camila', 'Gómez', 17, 8, 8);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Valentina', 'Pérez', 15, 9, 9);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Daniel', 'González', 14, 10, 10);
 
 
 INSERT INTO facturas (monto_pagado, modo_pago, fecha_pago, id_acudiente) VALUES (100.00, 'Efectivo', '2023-01-01', 1);
@@ -56,4 +56,3 @@ INSERT INTO facturas (monto_pagado, modo_pago, fecha_pago, id_acudiente) VALUES 
 INSERT INTO facturas (monto_pagado, modo_pago, fecha_pago, id_acudiente) VALUES (40.90, 'Transferencia', '2023-01-08', 8);
 INSERT INTO facturas (monto_pagado, modo_pago, fecha_pago, id_acudiente) VALUES (85.75, 'Efectivo', '2023-01-09', 9);
 INSERT INTO facturas (monto_pagado, modo_pago, fecha_pago, id_acudiente) VALUES (70.40, 'Tarjeta', '2023-01-10', 10);
-
