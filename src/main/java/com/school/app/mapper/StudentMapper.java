@@ -45,7 +45,7 @@ public interface StudentMapper {
     @Mapping(source = "name", target = "name")
     @Mapping(source = "lastName", target = "lastName")
     @Mapping(source = "age", target = "age")
-    @Mapping(source = "parent", target = "parent")
+ //   @Mapping(source = "parent", target = "parent")
 //    @Mapping(source = "teacher", target = "teacher")
     Student toStudent(StudentRequestDTO studentRequestDTO);
 }

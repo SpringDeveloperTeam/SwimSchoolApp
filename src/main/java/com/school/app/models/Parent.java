@@ -6,15 +6,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
 import java.util.List;
 
 @Data
 @Entity
-@EqualsAndHashCode(callSuper=false)
-@AllArgsConstructor
+@SuperBuilder
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "acudientes")
+@EqualsAndHashCode(callSuper=false)
 public class Parent extends Person {
+
     @Column(name = "documento", nullable = false)
     private String document;
 
@@ -34,3 +38,5 @@ public class Parent extends Person {
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, targetEntity = Invoice.class)
     private List<Invoice> invoiceList;
 }
+
+

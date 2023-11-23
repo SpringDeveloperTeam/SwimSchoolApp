@@ -1,11 +1,17 @@
 package com.school.app.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
+@SuperBuilder
 @MappedSuperclass
-public abstract class Person {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
@@ -15,13 +21,6 @@ public abstract class Person {
 
     @Column(name = "apellido")
     protected String lastName;
-
-    public Person(Long id, String name, String lastName) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-    }
-
-    public Person() {
-    }
 }
+
+

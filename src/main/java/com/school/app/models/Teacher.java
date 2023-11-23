@@ -6,14 +6,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
 import java.util.List;
 
 @Data
 @Entity
-@EqualsAndHashCode(callSuper=false)
-@AllArgsConstructor
+@SuperBuilder
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "profesores")
+@EqualsAndHashCode(callSuper=false)
 public class Teacher extends Person {
 
     @Column(name = "profesion", nullable = false)
