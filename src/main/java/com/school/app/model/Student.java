@@ -1,4 +1,4 @@
-package com.school.app.models;
+package com.school.app.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;

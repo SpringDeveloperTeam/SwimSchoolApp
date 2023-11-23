@@ -1,4 +1,4 @@
-package com.school.app.models;
+package com.school.app.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
