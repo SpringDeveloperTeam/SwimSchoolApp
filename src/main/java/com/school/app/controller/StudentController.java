@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/students")
@@ -22,8 +23,8 @@ public class StudentController {
     private IStudentMapper studentMapper;
 
     @GetMapping("/findAll")
-    public ResponseEntity<Iterable<StudentResponseDTO>> getStudents() {
-        Iterable<StudentResponseDTO> studentDTOS = studentMapper.toStudentsDTO(studentService.findAll());
+    public ResponseEntity<List<StudentResponseDTO>> getStudents() {
+        List<StudentResponseDTO> studentDTOS = studentMapper.toStudentsDTO(studentService.findAll());
         return ResponseEntity.ok(studentDTOS);
     }
 

@@ -3,6 +3,7 @@ package com.school.app.service.impl.student;
 import com.school.app.model.Student;
 import com.school.app.repository.IStudentRepository;
 import com.school.app.service.interfaces.student.IStudentService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +15,7 @@ public class StudentService implements IStudentService {
 
     @Override
     @Transactional(readOnly = true)
-    public Iterable<Student> findAll() {
+    public List<Student> findAll() {
         return studentRepository.findAll();
     }
 

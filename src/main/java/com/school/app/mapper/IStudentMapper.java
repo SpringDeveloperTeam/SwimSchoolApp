@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = { IParentMapper.class })
 public interface IStudentMapper {
 
     /**
@@ -23,7 +23,8 @@ public interface IStudentMapper {
      */
     @Mapping(source = "id", target = "id")
     @Mapping(source = "name", target = "studentName")
-    @Mapping(source = "parent.name", target = "parentName")
+    @Mapping(source = "lastName", target = "studentLastName")
+    @Mapping(source = "parent", target = "parent")
     @Mapping(source = "parent.invoiceList", target = "lastPayment", qualifiedByName = "lastPayment")
     StudentResponseDTO toStudentDTO(Student student);
 
@@ -39,7 +40,7 @@ public interface IStudentMapper {
      * @param student
      * @return List<StudentResponseDTO>
      */
-    Iterable<StudentResponseDTO> toStudentsDTO(Iterable<Student> student);
+    List<StudentResponseDTO> toStudentsDTO(List<Student> student);
 
     @Mapping(source = "name", target = "name")
     @Mapping(source = "lastName", target = "lastName")

@@ -12,8 +12,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TeacherResponseDTO {
+public class TeacherDTO {
+    private Long id;
+    private String name;
+    private String lastName;
     private String profession;
     private List<StudentResponseDTO> students;
-    private List<CalendarEntityDTO> calendarList;
+    private List<CalendarEntityDTO> calendars;
 }
