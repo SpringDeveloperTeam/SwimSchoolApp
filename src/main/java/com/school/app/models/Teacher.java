@@ -18,7 +18,6 @@ import java.util.List;
 @Table(name = "profesores")
 @EqualsAndHashCode(callSuper=false)
 public class Teacher extends Person {
-
     @Column(name = "profesion", nullable = false)
     private String profession;
 

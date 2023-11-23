@@ -18,7 +18,6 @@ import java.util.List;
 @Table(name = "acudientes")
 @EqualsAndHashCode(callSuper=false)
 public class Parent extends Person {
-
     @Column(name = "documento", nullable = false)
     private String document;
 

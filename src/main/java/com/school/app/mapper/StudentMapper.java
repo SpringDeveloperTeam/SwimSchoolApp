@@ -8,7 +8,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.Named;
-
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.Comparator;
@@ -40,7 +39,7 @@ public interface StudentMapper {
      * @param student
      * @return List<StudentResponseDTO>
      */
-    List<StudentResponseDTO> toStudentsDTO(List<Student> student);
+    Iterable<StudentResponseDTO> toStudentsDTO(Iterable<Student> student);
 
     @Mapping(source = "name", target = "name")
     @Mapping(source = "lastName", target = "lastName")
