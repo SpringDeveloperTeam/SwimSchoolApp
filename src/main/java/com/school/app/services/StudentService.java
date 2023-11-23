@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class StudentService implements IStudentService {
     @Autowired
@@ -13,13 +15,19 @@ public class StudentService implements IStudentService {
 
     @Override
     @Transactional(readOnly = true)
-    public Iterable<Student> findAll() {
-        return studentRepository.findAll();
+    public List<Student> findAll() {
+        return (List<Student>) studentRepository.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
     public Student findById(Long id) {
         return studentRepository.findById(id).orElse(Student.builder().build());
+    }
+
+    @Override
+    @Transactional
+    public void save(Student student) {
+        studentRepository.save(student);
     }
 }

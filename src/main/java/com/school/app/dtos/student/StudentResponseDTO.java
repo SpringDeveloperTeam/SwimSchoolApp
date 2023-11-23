@@ -1,4 +1,4 @@
-package com.school.app.dtos;
+package com.school.app.dtos.student;
 
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class StudentDTO {
+public class StudentResponseDTO {
+    private Long id;
     private String studentName;
     private String parentName;
     private LocalDateTime lastPayment;

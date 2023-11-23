@@ -1,31 +1,51 @@
 package com.school.app.mapper;
 
-import com.school.app.dtos.StudentDTO;
+import com.school.app.dtos.student.StudentRequestDTO;
+import com.school.app.dtos.student.StudentResponseDTO;
 import com.school.app.models.Invoice;
 import com.school.app.models.Student;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+import org.mapstruct.Named;
+
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-import org.mapstruct.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface StudentMapper {
-    public static final Logger LOG = LoggerFactory.getLogger(StudentMapper.class);
 
+    /**
+     * Map a Student to StudentResponseDTO
+     * @param student
+     * @return StudentResponseDTO
+     */
+    @Mapping(source = "id", target = "id")
     @Mapping(source = "name", target = "studentName")
     @Mapping(source = "parent.name", target = "parentName")
     @Mapping(source = "parent.invoiceList", target = "lastPayment", qualifiedByName = "lastPayment")
-    StudentDTO toStudentDTO(Student student);
+    StudentResponseDTO toStudentDTO(Student student);
 
-    @Named("lastPayment")
+    @Named(value = "lastPayment")
     default LocalDateTime mapLastPayment(List<Invoice> invoiceList) {
         if (invoiceList == null || invoiceList.isEmpty()) return null;
-
-        invoiceList.sort((inv1, inv2) -> inv2.getDateOfPaid().compareTo(inv1.getDateOfPaid()));
-        
-        return invoiceList.get(0).getDateOfPaid();
+        Invoice latestInvoice = Collections.max(invoiceList, Comparator.comparing(Invoice::getDateOfPaid));
+        return latestInvoice.getDateOfPaid();
     }
 
-    Iterable<StudentDTO> toStudentsDTO(Iterable<Student> students);
+    /**
+     * Map a List<Student> to List<StudentResponseDTO>
+     * @param student
+     * @return List<StudentResponseDTO>
+     */
+    List<StudentResponseDTO> toStudentsDTO(List<Student> student);
+
+    @Mapping(source = "name", target = "name")
+    @Mapping(source = "lastName", target = "lastName")
+    @Mapping(source = "age", target = "age")
+    @Mapping(source = "parent", target = "parent")
+//    @Mapping(source = "teacher", target = "teacher")
+    Student toStudent(StudentRequestDTO studentRequestDTO);
 }
