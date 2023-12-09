@@ -3,19 +3,19 @@ package com.school.app.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "acudientes")
-@EqualsAndHashCode(callSuper=false)
 public class Parent extends Person {
     @Column(name = "documento", nullable = false)
     private String document;

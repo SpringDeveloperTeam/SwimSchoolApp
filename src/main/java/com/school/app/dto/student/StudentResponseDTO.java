@@ -15,6 +15,7 @@ public class StudentResponseDTO {
     private Long id;
     private String studentName;
     private String studentLastName;
-    private ParentDTO parent;
+    private String parentName;
+    private String parentLastName;
     private LocalDateTime lastPayment;
 }

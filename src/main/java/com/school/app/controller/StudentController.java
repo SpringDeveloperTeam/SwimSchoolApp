@@ -36,8 +36,7 @@ public class StudentController {
 
     @PostMapping(value = "/save", consumes = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<String> saveStudent(@RequestBody StudentRequestDTO studentRequestDTO) throws URISyntaxException {
-       Student studentEntity = studentMapper.toStudent(studentRequestDTO);
-       studentService.save(studentEntity);
+       studentService.save(studentRequestDTO);
         return ResponseEntity.created(new URI("/save")).body("Student created successfully");
     }
 }
