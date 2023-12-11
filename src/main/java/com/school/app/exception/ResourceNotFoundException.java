@@ -1,7 +1,8 @@
 package com.school.app.exception;
 
 public class ResourceNotFoundException extends Exception {
-    public ResourceNotFoundException(String message) {
-        super(message);
+    public ResourceNotFoundException(Long resource) {
+        super("Resource ".concat(String.valueOf(resource))
+                         .concat(" Not found"));
     }
 }

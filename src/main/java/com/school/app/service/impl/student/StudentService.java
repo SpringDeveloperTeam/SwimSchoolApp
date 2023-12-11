@@ -10,7 +10,6 @@ import com.school.app.repository.IParentRepository;
 import com.school.app.repository.IStudentRepository;
 import com.school.app.repository.ITeacherRepository;
 import com.school.app.service.interfaces.student.IStudentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,17 +18,20 @@ import java.util.List;
 @Service
 public class StudentService implements IStudentService {
 
-    @Autowired
-    private IStudentRepository studentRepository;
+    private final IStudentRepository studentRepository;
 
-    @Autowired
-    private IParentRepository parentRepository;
+    private final IParentRepository parentRepository;
 
-    @Autowired
-    private ITeacherRepository teacherRepository;
+    private final ITeacherRepository teacherRepository;
 
-    @Autowired
-    private IStudentMapper studentMapper;
+    private final IStudentMapper studentMapper;
+
+    public StudentService(IStudentRepository studentRepository, IParentRepository parentRepository, ITeacherRepository teacherRepository, IStudentMapper studentMapper) {
+        this.studentRepository = studentRepository;
+        this.parentRepository = parentRepository;
+        this.teacherRepository = teacherRepository;
+        this.studentMapper = studentMapper;
+    }
 
     @Override
     @Transactional(readOnly = true)
@@ -45,15 +47,15 @@ public class StudentService implements IStudentService {
 
     @Override
     public void update(Long studentId, StudentRequestDTO studentRequestDTO) throws ResourceNotFoundException {
-        Student actualStudent = studentRepository.findById(studentId).orElseThrow(() -> new ResourceNotFoundException("Student ID " + studentId + " Not Found"));
+        Student actualStudent = studentRepository.findById(studentId).orElseThrow(() -> new ResourceNotFoundException(studentId));
 
-        if(studentRequestDTO.getParentId() != actualStudent.getParent().getId()){
-            Parent optParent = this.parentRepository.findById(studentRequestDTO.getParentId()).orElseThrow(() -> new ResourceNotFoundException("Parent ID " + studentRequestDTO.getParentId() + " Not Found"));
+        if(studentRequestDTO.getParentId().equals(actualStudent.getParent().getId())){
+            Parent optParent = this.parentRepository.findById(studentRequestDTO.getParentId()).orElseThrow(() -> new ResourceNotFoundException(studentRequestDTO.getParentId()));
             actualStudent.setParent(optParent);
         }
 
-        if(studentRequestDTO.getTeacherId() != actualStudent.getTeacher().getId()){
-            Teacher optTeacher = this.teacherRepository.findById(studentRequestDTO.getTeacherId()).orElseThrow(() -> new ResourceNotFoundException("Teacher ID " + studentRequestDTO.getTeacherId() + " Not Found"));
+        if(studentRequestDTO.getTeacherId().equals(actualStudent.getTeacher().getId())){
+            Teacher optTeacher = this.teacherRepository.findById(studentRequestDTO.getTeacherId()).orElseThrow(() -> new ResourceNotFoundException(studentRequestDTO.getTeacherId()));
             actualStudent.setTeacher(optTeacher);
         }
 
@@ -67,8 +69,8 @@ public class StudentService implements IStudentService {
     @Override
     @Transactional
     public void save(StudentRequestDTO studentRequestDTO) throws ResourceNotFoundException {
-        Parent optParent = this.parentRepository.findById(studentRequestDTO.getParentId()).orElseThrow(() -> new ResourceNotFoundException("Parent ID " + studentRequestDTO.getParentId() + " Not Found"));
-        Teacher optTeacher = this.teacherRepository.findById(studentRequestDTO.getTeacherId()).orElseThrow(() -> new ResourceNotFoundException("Teacher ID " + studentRequestDTO.getTeacherId() + " Not Found"));
+        Parent optParent = this.parentRepository.findById(studentRequestDTO.getParentId()).orElseThrow(() -> new ResourceNotFoundException(studentRequestDTO.getParentId()));
+        Teacher optTeacher = this.teacherRepository.findById(studentRequestDTO.getTeacherId()).orElseThrow(() -> new ResourceNotFoundException(studentRequestDTO.getTeacherId()));
 
         Student studentEntity = studentMapper.toStudent(studentRequestDTO);
         studentEntity.setParent(optParent);
@@ -80,7 +82,7 @@ public class StudentService implements IStudentService {
     @Override
     @Transactional
     public void deleteById(Long idStudent) throws ResourceNotFoundException {
-        Student actualStudent = studentRepository.findById(idStudent).orElseThrow(() -> new ResourceNotFoundException("Student ID " + idStudent + " Not Found"));
+        Student actualStudent = studentRepository.findById(idStudent).orElseThrow(() -> new ResourceNotFoundException(idStudent));
         studentRepository.delete(actualStudent);
     }
 }
