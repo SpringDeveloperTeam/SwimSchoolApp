@@ -41,8 +41,8 @@ public class StudentService implements IStudentService {
 
     @Override
     @Transactional(readOnly = true)
-    public Student findById(Long id) {
-        return studentRepository.findById(id).orElse(Student.builder().build());
+    public Student findById(Long studentId) throws ResourceNotFoundException {
+        return studentRepository.findById(studentId).orElseThrow(() -> new ResourceNotFoundException(studentId));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class StudentService implements IStudentService {
     @Override
     @Transactional
     public void save(StudentRequestDTO studentRequestDTO) throws ResourceNotFoundException {
-        Parent optParent = this.parentRepository.findById(studentRequestDTO.getParentId()).orElseThrow(() -> new ResourceNotFoundException(studentRequestDTO.getParentId()));
-        Teacher optTeacher = this.teacherRepository.findById(studentRequestDTO.getTeacherId()).orElseThrow(() -> new ResourceNotFoundException(studentRequestDTO.getTeacherId()));
+        Parent optParent = this.parentRepository.findById(studentRequestDTO.getParentId()).orElseThrow(() -> new ResourceNotFoundException("ParentId ".concat(String.valueOf(studentRequestDTO.getParentId()))));
+        Teacher optTeacher = this.teacherRepository.findById(studentRequestDTO.getTeacherId()).orElseThrow(() -> new ResourceNotFoundException("TeacherId ".concat(String.valueOf(studentRequestDTO.getTeacherId()))));
 
         Student studentEntity = studentMapper.toStudent(studentRequestDTO);
         studentEntity.setParent(optParent);

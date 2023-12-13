@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
 import java.util.List;
 
 @Getter
@@ -30,10 +31,15 @@ public class Parent extends Person {
     private Long phone;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
+    @OneToMany(mappedBy = "parent",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true)
     private List<Student> students;
 
-    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, cascade = { CascadeType.ALL }, targetEntity = Invoice.class)
+    @OneToMany(mappedBy = "parent",
+            fetch = FetchType.LAZY,
+            targetEntity = Invoice.class,
+            orphanRemoval = true)
     private List<Invoice> invoiceList;
 }
 

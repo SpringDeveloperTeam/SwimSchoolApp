@@ -16,6 +16,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @Table(name = "alumnos")
 public class Student extends Person {
+
     @Column(name = "edad", nullable = false)
     private byte age;
 

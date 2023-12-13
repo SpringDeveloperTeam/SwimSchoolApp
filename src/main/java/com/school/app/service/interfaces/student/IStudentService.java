@@ -7,7 +7,7 @@ import com.school.app.model.Student;
 
 public interface IStudentService {
      List<Student> findAll();
-     Student findById(Long studentId);
+     Student findById(Long studentId) throws ResourceNotFoundException;
      void update(Long studentId, StudentRequestDTO studentRequestDTO) throws ResourceNotFoundException;
      void save(StudentRequestDTO studentRequestDTO) throws ResourceNotFoundException;
      void deleteById(Long studentId) throws ResourceNotFoundException;
