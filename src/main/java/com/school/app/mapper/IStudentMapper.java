@@ -33,9 +33,6 @@ public interface IStudentMapper {
     @Named(value = "lastPayment")
     default LocalDateTime mapLastPayment(List<Invoice> invoiceList) {
         if (invoiceList == null || invoiceList.isEmpty()) return null;
-        
-        String helloString = Provider.class.getSimpleName();
-        System.out.println(helloString);
 
         Invoice latestInvoice = Collections.max(invoiceList, Comparator.comparing(Invoice::getDateOfPaid));
         return latestInvoice.getDateOfPaid();
