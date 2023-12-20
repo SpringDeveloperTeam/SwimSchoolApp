@@ -11,7 +11,20 @@ services:
       - data-mysql:/var/lib/mysql
     networks:
       - swin_network
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: "jenkins"
+    privileged: true
+    user: root
+    ports:
+      - "8090:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    restart: always
 volumes:
   data-mysql:
+  jenkins_home:
 networks:
   swin_network:
