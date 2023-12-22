@@ -18,29 +18,26 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "acudientes")
 public class Parent extends Person {
-    @Column(name = "documento", nullable = false)
-    private String document;
+  @Column(name = "documento", nullable = false)
+  private String document;
 
-    @Column(nullable = false)
-    private String email;
+  @Column(nullable = false)
+  private String email;
 
-    @Column(name = "direccion", nullable = false)
-    private String address;
+  @Column(name = "direccion", nullable = false)
+  private String address;
 
-    @Column(name = "telefono", nullable = false)
-    private Long phone;
+  @Column(name = "telefono", nullable = false)
+  private Long phone;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "parent",
-            fetch = FetchType.LAZY,
-            orphanRemoval = true)
-    private List<Student> students;
+  @JsonManagedReference
+  @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY, orphanRemoval = true)
+  private List<Student> students;
 
-    @OneToMany(mappedBy = "parent",
-            fetch = FetchType.LAZY,
-            targetEntity = Invoice.class,
-            orphanRemoval = true)
-    private List<Invoice> invoiceList;
+  @OneToMany(
+      mappedBy = "parent",
+      fetch = FetchType.LAZY,
+      targetEntity = Invoice.class,
+      orphanRemoval = true)
+  private List<Invoice> invoiceList;
 }
-
-

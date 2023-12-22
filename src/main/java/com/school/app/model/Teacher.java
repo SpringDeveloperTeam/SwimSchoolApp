@@ -17,14 +17,17 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "profesores")
 public class Teacher extends Person {
-    @Column(name = "profesion", nullable = false)
-    private String profession;
+  @Column(name = "profesion", nullable = false)
+  private String profession;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
-    private List<Student> students;
+  @JsonManagedReference
+  @OneToMany(
+      mappedBy = "teacher",
+      fetch = FetchType.LAZY,
+      cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
+  private List<Student> students;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_profesor")
-    private List<CalendarEntity> calendarEntityList;
+  @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JoinColumn(name = "id_profesor")
+  private List<CalendarEntity> calendarEntityList;
 }

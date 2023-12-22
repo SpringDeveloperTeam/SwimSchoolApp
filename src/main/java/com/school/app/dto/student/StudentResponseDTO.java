@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentResponseDTO {
-    private Long id;
-    private String studentName;
-    private String studentLastName;
-    private String parentName;
-    private String parentLastName;
-    private LocalDateTime lastPayment;
+  private Long id;
+  private String studentName;
+  private String studentLastName;
+  private String parentName;
+  private String parentLastName;
+  private LocalDateTime lastPayment;
 }

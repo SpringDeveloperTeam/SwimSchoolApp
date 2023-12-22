@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ParentDTO {
-    private Long id;
-    private String name;
-    private String lastName;
-    private String document;
-    private String email;
-    private String address;
-    private Long phone;
+  private Long id;
+  private String name;
+  private String lastName;
+  private String document;
+  private String email;
+  private String address;
+  private Long phone;
 }

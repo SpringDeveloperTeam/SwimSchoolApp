@@ -14,15 +14,13 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Person {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  protected Long id;
 
-    @Column(name = "nombre")
-    protected String name;
+  @Column(name = "nombre")
+  protected String name;
 
-    @Column(name = "apellido")
-    protected String lastName;
+  @Column(name = "apellido")
+  protected String lastName;
 }
-
-

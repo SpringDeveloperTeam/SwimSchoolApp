@@ -5,6 +5,4 @@ import org.springframework.stereotype.Repository;
 import com.school.app.model.Teacher;
 
 @Repository
-public interface ITeacherRepository extends ListCrudRepository<Teacher, Long> {
-    
-}
+public interface ITeacherRepository extends ListCrudRepository<Teacher, Long> {}

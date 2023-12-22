@@ -8,6 +8,7 @@ import com.school.app.model.CalendarEntity;
 
 @Mapper(componentModel = ComponentModel.SPRING)
 public interface ICalendarEntityMapper {
-    CalendarEntityDTO toCalendarEntityResponseDTO(CalendarEntity calendarEntity);
-    List<CalendarEntityDTO> toCalendarEntitysDTO(List<CalendarEntity> calendars);
+  CalendarEntityDTO toCalendarEntityResponseDTO(CalendarEntity calendarEntity);
+
+  List<CalendarEntityDTO> toCalendarEntitysDTO(List<CalendarEntity> calendars);
 }

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CalendarEntityDTO {
-    private Long id;
-    private String day;
-    private String schedule;
+  private Long id;
+  private String day;
+  private String schedule;
 }

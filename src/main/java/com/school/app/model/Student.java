@@ -17,16 +17,16 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "alumnos")
 public class Student extends Person {
 
-    @Column(name = "edad", nullable = false)
-    private byte age;
+  @Column(name = "edad", nullable = false)
+  private byte age;
 
-    @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name = "id_acudiente")
-    private Parent parent;
+  @ManyToOne
+  @JsonBackReference
+  @JoinColumn(name = "id_acudiente")
+  private Parent parent;
 
-    @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name = "id_profesor")
-    private Teacher teacher;
+  @ManyToOne
+  @JsonBackReference
+  @JoinColumn(name = "id_profesor")
+  private Teacher teacher;
 }
