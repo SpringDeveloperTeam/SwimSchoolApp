@@ -1,5 +1,52 @@
 version: "3.8"
 services:
+
+  # Jenkins Image
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: "jenkins"
+    privileged: true
+    user: root
+    ports:
+      - "8090:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    restart: always
+    networks:
+      swin_network:
+
+  # SonarQube Image
+  sonarqube:
+    image: sonarqube:community
+    hostname: sonarqube
+    platform: linux/amd64
+    depends_on: postgres
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    ports:
+      - "9000:9000"
+    networks:
+      swin_network:
+
+  # Postgres Image
+  postgres:
+    image: postgres:13
+    hostname: postgresql
+    container_name: postgresql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sonar
+      POSTGRES_DB: sonar
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+    networks:
+      swin_network:
+
+  # MySQL Image
   mysql8:
     image: mysql:8
     ports:
@@ -12,19 +59,14 @@ services:
     networks:
       - swin_network
 
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: "jenkins"
-    privileged: true
-    user: root
-    ports:
-      - "8090:8080"
-      - "50000:50000"
-    volumes:
-      - jenkins_home:/var/jenkins_home
-    restart: always
 volumes:
   data-mysql:
   jenkins_home:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  postgresql:
+  postgresql_data:
+
 networks:
   swin_network:

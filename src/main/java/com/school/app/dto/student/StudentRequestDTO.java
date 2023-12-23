@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentRequestDTO {
-    private String name;
-    private String lastName;
-    private byte age;
-    private Long parentId;
-    private Long teacherId;
+  private String name;
+  private String lastName;
+  private byte age;
+  private Long parentId;
+  private Long teacherId;
 }

@@ -13,10 +13,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TeacherDTO {
-    private Long id;
-    private String name;
-    private String lastName;
-    private String profession;
-    private List<StudentResponseDTO> students;
-    private List<CalendarEntityDTO> calendars;
+  private Long id;
+  private String name;
+  private String lastName;
+  private String profession;
+  private List<StudentResponseDTO> students;
+  private List<CalendarEntityDTO> calendars;
 }

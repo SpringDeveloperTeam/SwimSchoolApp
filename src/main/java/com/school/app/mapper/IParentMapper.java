@@ -7,5 +7,5 @@ import com.school.app.model.Parent;
 
 @Mapper(componentModel = ComponentModel.SPRING)
 public interface IParentMapper {
-    ParentDTO toParentDTO(Parent parent);
+  ParentDTO toParentDTO(Parent parent);
 }
