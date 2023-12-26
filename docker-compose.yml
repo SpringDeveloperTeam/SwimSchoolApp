@@ -21,7 +21,8 @@ services:
     image: sonarqube:community
     hostname: sonarqube
     platform: linux/amd64
-    depends_on: postgres
+    depends_on:
+      - postgres
     volumes:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_extensions:/opt/sonarqube/extensions
