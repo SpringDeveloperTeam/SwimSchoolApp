@@ -34,16 +34,16 @@ INSERT INTO calendarios(dia, horario, id_profesor) VALUES ('Martes', '08:00 - 12
 INSERT INTO calendarios(dia, horario, id_profesor) VALUES ('Miércoles', '16:00 - 20:00', 2);
 
 
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Jorge', 'Perez', 16, 1, 1);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Carolina', 'Gonzalez', 15, 2, 2);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Mateo', 'Lopez', 14, 3, 3);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Isabela', 'Ramirez', 17, 4, 4);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Andrea', 'Suarez', 15, 5, 5);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Felipe', 'Hernandez', 16, 6, 6);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Manuel', 'Martinez', 14, 7, 7);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Camila', 'Gomez', 17, 8, 8);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Valentina', 'Perez', 15, 9, 9);
-INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Daniel', 'Gonzalez', 14, 10, 10);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Jorge', 'Pérez', 16, 1, 1);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Carolina', 'González', 15, 2, 2);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Mateo', 'López', 14, 3, 3);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Isabela', 'Ramírez', 17, 4, 4);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Andrea', 'Suárez', 15, 5, 5);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Felipe', 'Hernández', 16, 6, 6);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Manuel', 'Martínez', 14, 7, 7);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Camila', 'Gómez', 17, 8, 8);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Valentina', 'Pérez', 15, 9, 9);
+INSERT INTO alumnos(nombre, apellido, edad, id_acudiente, id_profesor) VALUES ('Daniel', 'González', 14, 10, 10);
 
 
 INSERT INTO facturas (monto_pagado, modo_pago, fecha_pago, id_acudiente) VALUES (100.00, 'Efectivo', '2023-01-01', 1);
