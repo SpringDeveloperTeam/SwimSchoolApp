@@ -12,18 +12,13 @@ import com.school.app.repository.ITeacherRepository;
 import com.school.app.service.interfaces.student.IStudentService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 @Service
 public class StudentService implements IStudentService {
-
   private final IStudentRepository studentRepository;
-
   private final IParentRepository parentRepository;
-
   private final ITeacherRepository teacherRepository;
-
   private final IStudentMapper studentMapper;
 
   public StudentService(

@@ -10,6 +10,10 @@ import java.util.List;
 
 public class TestDataConstants {
 
+  /*
+    Student Data
+   */
+
   public static final Student STUDENT_ENTITY_DATA() {
     Student student = new Student();
     student.setId(3L);
@@ -106,5 +110,23 @@ public class TestDataConstants {
             .paidAmount(new BigDecimal(25000))
             .paidMode("Transfer")
             .build());
+  }
+
+  /*
+    Parent Data
+   */
+
+  public static final Parent PARENT_ENTITY_DATA() {
+    Parent parent = new Parent();
+    parent.setId(3L);
+    parent.setName("Adriana");
+    parent.setLastName("Florez");
+    parent.setDocument("1003245834");
+    parent.setEmail("test@test.com");
+    parent.setAddress("Avenida carrera 14 #49-55");
+    parent.setPhone(739398L);
+    parent.setStudents(STUDENT_ENTITY_DATA_LIST());
+    parent.setInvoiceList(INVOICES_DATA_LIST());
+    return parent;
   }
 }

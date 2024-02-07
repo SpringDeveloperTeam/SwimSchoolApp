@@ -58,7 +58,7 @@ class IStudentMapperTest {
   }
 
   @Test
-  void mapLastPymentTest() {
+  void mapLastPaymentTest() {
     List<Invoice> invoiceList = TestDataConstants.INVOICES_DATA_LIST();
     LocalDateTime localDateTime = studentMapper.mapLastPayment(invoiceList);
 
