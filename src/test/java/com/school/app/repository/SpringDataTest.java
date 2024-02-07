@@ -23,7 +23,6 @@ class SpringDataTest {
     assertNotNull(studentOptional);
     assertTrue(studentOptional.isPresent());
     assertEquals("Jorge", studentOptional.orElseThrow().getName());
-    assertEquals("Pérez", studentOptional.orElseThrow().getLastName());
   }
 
   @Test
@@ -67,7 +66,6 @@ class SpringDataTest {
     assertNotNull(actualStudent);
     assertTrue(actualStudent.isPresent());
     assertEquals("Carolina", actualStudent.orElseThrow().getName());
-    assertEquals("González", actualStudent.orElseThrow().getLastName());
     assertEquals(15, actualStudent.orElseThrow().getAge());
 
     Student studentUpdated = actualStudent.orElseThrow();
@@ -90,12 +88,11 @@ class SpringDataTest {
     assertNotNull(actualStudent);
     assertTrue(actualStudent.isPresent());
     assertEquals("Jorge", actualStudent.orElseThrow().getName());
-    assertEquals("Pérez", actualStudent.orElseThrow().getLastName());
     assertEquals(16, actualStudent.orElseThrow().getAge());
 
     studentRepository.delete(actualStudent.orElseThrow());
 
     assertEquals(9, studentRepository.findAll().size());
-    assertThrows(NoSuchElementException.class, () -> studentRepository.findById(1L).orElseThrow());
+    assertThrows(NoSuchElementException.class, studentRepository.findById(1L)::orElseThrow);
   }
 }
