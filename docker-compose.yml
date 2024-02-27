@@ -12,7 +12,6 @@ services:
       - "50000:50000"
     volumes:
       - jenkins_home:/var/jenkins_home
-    restart: always
     networks:
       swin_network:
 
