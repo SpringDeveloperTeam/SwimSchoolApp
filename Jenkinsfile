@@ -33,10 +33,10 @@ pipeline {
         stage('Commit & Push') {
             steps {
                 script {
-                    // Comprueba si hay cambios después del formateo
+                   /* // Comprueba si hay cambios después del formateo
                     def hasChanges = sh(script: 'git status --porcelain', returnStdout: true).trim()
                     if (hasChanges) {
-                    /*
+
                         // Configura Git si es necesario
                         sh 'git config user.email "you@example.com"'
                         sh 'git config user.name "Your Name"'
