@@ -32,7 +32,7 @@ pipeline {
 
         stage('Commit & Push') {
             steps {
-                script {
+               /* script {
                    /* // Comprueba si hay cambios después del formateo
                     def hasChanges = sh(script: 'git status --porcelain', returnStdout: true).trim()
                     if (hasChanges) {
@@ -44,11 +44,13 @@ pipeline {
                         // Añade, haz commit y empuja los cambios
                         sh 'git add .'
                         sh 'git commit -m "Apply Google Code Format"'
-                        sh 'git push' */
+                        sh 'git push'
                         echo 'Hay cambios despues del formateo'
                     } else {
                         echo 'No hay cambios despues del formateo'
                     }
+                    */
+                     echo 'Hay cambios despues del formateo'
                 }
             }
         }
