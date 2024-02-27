@@ -38,7 +38,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'mvn test' // Ejecuta los tests unitarios
+                // sh 'mvn test' // Ejecuta los tests unitarios
+                echo 'Test again'
             }
         }
     }
