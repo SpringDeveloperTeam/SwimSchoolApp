@@ -29,5 +29,18 @@ pipeline {
                 echo 'Formateo de codigo'
             }
         }
+
+        stage('Commit & Push') {
+            steps {
+                echo 'Commit'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // sh 'mvn test' // Ejecuta los tests unitarios
+                echo 'Test again'
+            }
+        }
     }
 }
