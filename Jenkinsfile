@@ -12,7 +12,8 @@ pipeline {
 
         stage('Formatear código') {
             steps {
-                sh 'mvn googleformatter-maven-plugin:format'
+                // sh 'mvn googleformatter-maven-plugin:format'
+                echo 'mvn googleformatter-maven-plugin:format'
             }
         }
 
