@@ -12,7 +12,7 @@ pipeline {
 
         stage('Formatear código') {
             steps {
-                sh 'mvn com.theoryinpractise:googleformatter-maven-plugin:format'
+                sh 'mvn googleformatter-maven-plugin:format'
             }
         }
 
