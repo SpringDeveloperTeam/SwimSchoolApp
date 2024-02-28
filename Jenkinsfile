@@ -1,45 +1,30 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'mavenjenkins'
+    }
     stages {
-        stage('Clean space') {
-                steps {
-                    // checkout scm
-                    echo 'Limpiar espaco de trabajo Jenkins'
-                    cleanWs()
-                }
-            }
-        stage('Checkout') {
+        stage('Limpiar') {
             steps {
-                // checkout scm
-                echo 'Clonando el repositorio'
+                cleanWs()
             }
         }
 
-        stage('Build') {
+        stage('Formatear código') {
             steps {
-               // sh 'mvn clean install -DskipTests'
-               echo 'Construccion del repositorio'
+                sh 'mvn com.theoryinpractise:googleformatter-maven-plugin:format'
             }
         }
 
-        stage('Format') {
+        stage('Construir proyecto') {
             steps {
-                // sh 'mvn googleformatter:format'
-                echo 'Formateo de codigo'
+                sh 'mvn clean install -DskipTests'
             }
         }
 
-        stage('Commit & Push') {
+        stage('Ejecutar tests unitarios') {
             steps {
-                echo 'Commit'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                // sh 'mvn test' // Ejecuta los tests unitarios
-                echo 'Test again'
+                sh 'mvn test'
             }
         }
     }

@@ -81,6 +81,7 @@
 
     <build>
         <plugins>
+            <!-- Spring boot maven plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -94,6 +95,7 @@
                 </configuration>
             </plugin>
 
+            <!-- MapStruct plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -124,12 +126,14 @@
                 </configuration>
             </plugin>
 
+            <!-- SonarQube plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.10.0.2594</version>
             </plugin>
 
+            <!-- Google java format plugin: Format -->
             <plugin>
                 <groupId>com.theoryinpractise</groupId>
                 <artifactId>googleformatter-maven-plugin</artifactId>
